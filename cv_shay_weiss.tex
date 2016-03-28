@@ -1,0 +1,272 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.0 (5/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\addbibresource{bibliography.bib} % Specify the bibliography file to include publications
+
+\begin{document}
+
+\header{Shay}{Weiss}{Senior Software and DevOps Engineer} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\raggedright {\section{Contact Details}}
+57 St Pauls Pl
+Apt 2A
+Brooklyn, NY
+11226-1627
+~
++1 (347) 417 0311
+~
+\href{mailto:another.shay.weiss@gmail.com}{another.shay.weiss@gmail.com}
+\href{http://lnkd.in/eQjdHJ}{linkedin: Shay Weiss}
+\href{https://github.com/Shaywei}{github: Shaywei}
+\section{Languages}
+Hebrew: Native
+English: Fluent
+Swedish: OK
+\section{Software \& Technologies}
+~
+Linux server ops, maintenance \& troubleshooting {\color{red} $\varheartsuit$} 
+~
+Python (2.7, 3.3) {\color{red} $\varheartsuit$}
+C++ (boost, C++11)
+Java (and Groovy)
+C\# (.Net 4.0 and 4.5)
+JavaScript
+~
+Git: Plumbing \& Porcelain {\color{red} $\varheartsuit$}
+GHE, Gerrit, Stash
+~
+TeamCity
+Hudson/Jenkins
+~
+Puppet {\color{red} $\varheartsuit$}
+~
+Nginx
+~
+Maven Lifecycle
+~
+Tinkering knowledge:
+~
+Ruby (on Rails)
+Redis
+PostgreSQL
+ZeroMQ,
+Protobuffs
+HTML
+CSS \& SASS
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\section{Experience}
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{01/2016--Now}
+{Spotify Inc}
+{NYC, US}
+{\textbf{Senior Software Engineer} \\
+Backend Engineer, SRE, DevOps specialist (Cross-Platform client(s) build squad)
+\begin{itemize}
+\item Part of a cross-functional team in charge of improving the build process and infrastructure for all clients (Android, iOS, Desktop (JavaScript))
+\begin{itemize}
+\item Implementing infrastructure to gather all build data for clients and visualise it in a central dashboard (for data-driven decisions)
+\item Improving build times using pararilzatizong techniques and cacheing (more than 33\% build time improvement on iOS
+\item Implementing ownership module for each component in each client - from RFC to tooling that provide information and enforcement
+\end{itemize}
+\item Part of a cross-organisational team of SREs for incident management with various responsibilities:
+\begin{itemize}
+\item All-purpose on-call for any incident that affects users whatsoever or impedes development process on a significant scale
+\item Advising and consulting squads on best practices in all matters dev, ops, scalability and whatever needed to get their services to work in production.
+\item Capacity planning and failover exercises to make sure Spotify can serve users 24/7/365 (e.g: Preparing for increased traffic around holidays).
+\end{itemize}
+\item Representing the organization and talking in various meetups and conventions
+\item Part of the hiring process - conducting technical and soft interviews and making sure Spotify hires the best engineers/people
+\item Active role in the organization's "Leadership Circle"
+\end{itemize}}
+\\
+\end{entrylist}
+\begin{entrylist}
+\entry
+{07/2014--01/2016}
+{Spotify AB}
+{Stockholm, Sweden}
+{\textbf{Senior Software Engineer} \\
+Backend Engineer, SRE, DevOps specialist (CI/CD squad)
+\begin{itemize}
+\item Enhancing and maintaining the CI/CD infrastructure across the organization - infrastructure required to develop the Spotify clients for all imaginable platforms (Android, iOS, Web, Windows, Playstation, cars, etc')
+\begin{itemize}
+\item Migrating the entire organization from Gerrit to Github Enterprise for VCS
+\item Operating and optimizing one of the largest TeamCity servers in production for build server
+\item All the binary repositories (Debrepo, PyPi for Python, NPM for Node, Artifactory for Maven and misc) 
+\end{itemize}
+\item Designing and implementing services to enhance the CI/CD environment and address developers pain points
+\begin{itemize}
+\item Communicating with stakeholders and developers from the different clients to map pain points
+\item Architecting, designing and implementing solutions from scratch to production
+\item Example service: Integrating TeamCity and Github Enterprise with a 'bridge' that triggers multiple configurations in TC per Pull Request / Push event, aggregates the results and gives feedback on the PR back to devs for a better feedback loop
+\end {itemize}
+\item Making sure all services mentioned above (house-grown and 3rd party alike) meet best practices:
+\begin{itemize}
+\item All services are managed as roles in configuration management (Puppet), normalized 100\% and new servers can be re-provisioned with a push of a button
+\item All services are 100\% backed-up and all data can be recovered in case of a catastrophe.
+\item All services are monitored with basic core and business metrics (from CPU to service availability) using Elastic Search / Logstash / Kibana setup for log visualization and PagerDuty alerting
+\item Regularly scheduled "swap-weeks" to make sure that the above is actually verified and getting hands-on experience in going through the motions required to failover to a new server
+\end{itemize}
+\end{itemize}}
+%------------------------------------------------
+\\
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2013--07/2014}
+{HP Software - R\&D}
+{Yahud, Israel}
+{\textbf{Senior DevOps Engineer} \\
+Maintaining and enhancing the Continuous Integration and Continuous Deployment engine supporting all R\&D of our business unit.
+\begin{itemize}
+\item Architecting CI/CD flows and release cycle for a complex Enterprise-level product developed by over 200 developers worldwide (Israel, US and China).
+\item Extensive enhancement of Jenkins CI - developing plug-ins and automation tools for CI maintenance and capabilities
+\item Supporting infrastructure of entire dev process:
+\begin{itemize}
+\item Stash Git repo management
+\item Nexus binary repository
+\item Puppet and Vagrant deployment
+\end{itemize}
+\item Leading cultural change and best practices (Git workflows, DRY, Scrum, etc')
+\end{itemize}}
+%------------------------------------------------
+\\
+\end{entrylist}
+\begin{entrylist}
+\entry
+{2012}
+{AlgoWiz - Algo-trading startup}
+{Tel-Aviv, Israel}
+{\textbf{Senior Software Engineer} \\
+Maintaining and enhancing the framework responsible for the real-time trading with the different Exchanges. Head of  Devops.
+\begin{itemize}
+\item Developed infrastructure for automatic dev-environment deployment.
+\item Created infrastructure for Continuous Integration and testing.
+\item Embedding best practices (small commits, TDD, tests as live code documentation)
+\item Moving the dev and production platform from Windows to Unix.
+\end{itemize}}
+%------------------------------------------------
+\\
+\entry
+{2011}
+{VisionMap - Aerial survey \& digital mapping}
+{Ramat-Gan, Israel}
+{\textbf{Software Engineer} \\
+Part of the flight-software: On-flight, real-time, performance-critical software that collects data from various hardware source (GPS, cameras, gyroscopes and more) for processing.
+\begin{itemize}
+\item Deep experience in TDD/BDD and Agile.
+\item Created an in-house system for Integration/Deployment tests.
+\item Solving infrastructure problems (3rd party libraries, platform issues and more)
+\end{itemize}}
+%------------------------------------------------
+\end{entrylist}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2009--2011}
+{Graduate student}
+{Ben Gurion University, Israel}
+{Graduate student at the Math department at the Algebraic Combinatorics field.}
+%------------------------------------------------
+\entry
+{2006--2009}
+{B.Sc Computer Science / Math}
+{Ben Gurion University, Israel}
+{Bi-disciplinary program at Ben Gurion University.\\
+Graduated with honors}
+%------------------------------------------------
+\end{entrylist}
+
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Awards}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2009}
+{Honorary summer scholarship}
+{Ben Gurion University, Israel}
+{Summer scholarship funding and permission for starting Graduate studies at the last semester of being an Undergraduate}
+%------------------------------------------------
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	Army Service SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Army Service}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2003-2006}
+{Israel Defence Army}
+{Mandatory Service}
+{Started as an infantryman, promoted to a squad leader and finished service as a division sergeant.}
+%------------------------------------------------
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+\clearpage
+\section{Added Value}
+Software development, craftsmanship and engineering has always been a passion of mine.\\
+It is a privilege to be able to make a living off of a hobby I enjoy pursuing. \\
+I have been tinkering with software since childhood and have been writing and designing software which is effective, readable \& maintainable since.
+I have evolved and matured with my experience as a software engineer and I strive that my work will be guided by: \\
+\begin{itemize}
+\item "Done is better than Perfect"
+\item "Make data driven decisions" (It's immensely satisfying to see the results of your work make a visual and measurable impact on a key metric graph)
+\item "A line of code is written once but is read many times"
+\item "Be Pragmatic"
+\end{itemize}
+I am a good people manager and product owner. \\
+I love being part of the big picture and make sure everyone are happy and on the same page. \\
+I cultivate strong communication skills based on honesty, transparency and openness. \\
+A strong negotiator and conflict diffuser. Well rounded in soft skills.
+\\
+\\
+\end{document}
